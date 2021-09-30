@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>fb login form checking</title>
+    </head>
+    <body>
+        <center>
+        <form>
+            username:
+            <br>
+            <br>
+             <input type="text" placeholder="enter username or mobile no" id="username">
+             <br>
+             <br>
+            password:
+            <br>
+            <br>
+            <input type="password" id="password">
+            <br>
+            <br>
+            <button onclick="validation()">LOGIN</button>
+            
+        </form>
+        <h1 id="msg"></h1>
+        
+    </center>
+    
+    <script>
+        function validation(){
+            event.preventDefault();
+        var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            var msg=document.getElementById("msg"); 
+    if((username =="murali123" || username == "9642364031") && password == "abc123")
+    {
+         msg.innerHTML="login success"; 
+    }
+    else
+    {
+          msg.innerHTML="login failed";
+    }
+}
+      
+</script>
+    </body>
+</html>
