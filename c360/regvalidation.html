@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <title>Registration page</title>
+        <style>
+            form{
+                border: 1px solid black;
+                border-radius: 10px;
+                background-color: #606060;
+                text-align: left;
+                width: 350px;
+                height: 450px;
+                padding-left: 20px;
+                margin-top:120px ;
+                padding-top: 40px;
+                
+
+            }
+            .container{
+                border: 1px solid black;
+                background-image: url("digitalimg.png.png");
+                width:700px ;
+                height: 800px;
+                
+            }
+            
+            h1{
+                text-align: center;
+                color: red;
+                padding-top: 20px;
+            }
+            button:hover{
+                background-color: red;
+            }
+            .header{
+               
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        <center>
+            <div class="container">
+            <form>
+               <h1>Registration form</h1>
+            Enter Username:<input type="text" id="username">
+                <br>
+                <br>
+                Password:<input type="password" id="password">
+                <br>
+                <br>
+                ConfirmPassword:<input type="password" id="password1">
+                <br>
+                <br>
+                Mail id:<input type="email" id="mailid">
+                <br>
+                <br>
+               gender:Male<input type="radio" name="gender">Female<input type="radio" name="gender">
+                <br>
+                <br>
+                Accept terms and conditions:<input type="checkbox" id="check">
+                <br>
+                <br>
+                <center>
+                <button onclick="validation()">Register</button>
+            </center>
+        </form>
+        </div>
+        </center>
+        <script>
+            function validation(){
+                event.preventDefault();
+                var username=document.getElementById("username").value;
+                var password=document.getElementById("password").value;
+                
+                var confirmpassword=document.getElementById("password1").value;
+                var mailid=document.getElementById("mailid").value;
+                
+                var gender=document.getElementsByName("gender");
+                var checkbox=document.getElementById("check").checked;
+               
+                  if(username==""){
+                alert("User name should not be empty");
+                return false;
+                  }
+                 else if(password=="")
+                  {
+                alert("password should not be empty");
+                return false;
+                  }
+                  else if(confirmpassword=="")
+                  {
+                alert("confirmpassword should not be empty");
+                return false;
+                  }
+             else if(password!=confirmpassword)
+              {
+                
+                alert("password and conform password are not matched");
+                return false;
+              }
+             
+              else if(mailid=="")
+              {
+                  alert("mail id should not be empty");
+                  return false;
+              }
+             else if(!(gender[0].checked || gender[1].checked))
+              {
+                  alert("check the gender");
+                  return false;
+              }
+              else if(checkbox==false){
+                  alert("check the checkbox");
+                  return false;
+              }
+              else{
+                alert("registration completed");
+                return false;
+                
+              }
+             
+                
+             }
+
+             
+        </script>
+    
+    </body>
+</html>
